@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DataBinding.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DataBinding"
+    xmlns:pages="clr-namespace:DataBinding.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="DataBinding">
+    
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        <ShellContent
+            Title="Context Binding"
+            ContentTemplate="{DataTemplate pages:ContextBindingPage}"
+            Route="Context Binding" />
+
+        <ShellContent
+            Title="Without Context Binding"
+            ContentTemplate="{DataTemplate pages:WithoutBindingContextPage}"
+            Route="Without Context Binding" />
+
+        <ShellContent
+            Title="Binding Context Inhenritance"
+            ContentTemplate="{DataTemplate pages:BindingContextInherictance}"
+            Route="Binding Context Inhenritance" />
+    </TabBar>
+    
+</Shell>

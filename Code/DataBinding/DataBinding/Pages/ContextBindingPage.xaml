@@ -1,0 +1,17 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBinding.Pages.ContextBindingPage"
+             Title="Basic Binding">
+    <StackLayout Padding="10, 0">
+        <Label Text="TEXT"
+               FontSize="60"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" 
+               BindingContext="{x:Reference Name=slider}"
+               Rotation="{Binding Path=Value}"/>
+
+        <Slider x:Name="slider"
+                Maximum="360"
+                VerticalOptions="Center" />
+    </StackLayout>
+</ContentPage>
