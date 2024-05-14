@@ -1,5 +1,7 @@
 # Tutorial
-
+Name | URL | Note
+--- | --- | --- |
+| Data Binding | [Data Binding](./Tutorials/data_binding.md) |  |
 # Ebook
 
 Name | URL | Note

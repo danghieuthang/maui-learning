@@ -21,11 +21,30 @@ In .NET MAUI, data binding is typically achieved through the MVVM (Model-View-Vi
 
 ## Binding Type:
 1. ### Binding with Binding Context
-- Use code. For more details, see [Binding with Binding Context Details](../Code/DataBinding/DataBinding/Pages/BasicBindingPage.xaml)
-- Use XAML markup extensions to define. For more details, see [Binding with Binding Context Details](../Code/DataBinding/DataBinding/Pages/ContextBindingPage.xaml)
+- Use code. For example code, see [Binding with Binding Context Details](../Code/DataBinding/DataBinding/Pages/BasicBindingPage.xaml.cs)
+
+- Use XAML markup extensions to define. 
+```XAML
+ <Label Text="TEXT"
+               FontSize="80"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               BindingContext="{x:Reference Name=slider}"
+               Rotation="{Binding Path=Value}" />
+
+        <Slider x:Name="slider"
+                Maximum="360"
+                VerticalOptions="Center" />
+```
+- The `x:Reference` markup extension is required to reference the source object, which is the Slider named slider.
+- The `Binding` markup extension links the Rotation property of the Label to the Value property of the Slider.
+
+For example code, see [Binding with Binding Context Details](../Code/DataBinding/DataBinding/Pages/ContextBindingPage.xaml)
+
+- **Note:** The source property is specified with the `Path` property of the `Binding` markup extension, which corresponds with the `Path` property of the `Binding` class.
 
 2. ### Binding without Binding Context
-- Use code. For more details, see [Binding without a Binding Context Details](../Code/DataBinding/DataBinding/Pages/WithoutBindingContextPage.xaml)
+- Use code. For more details, see [Binding without a Binding Context Details](../Code/DataBinding/DataBinding/Pages/WithoutBindingContextPage.xaml.cs)
 - Use XAML:
 ```XAML
 Scale="{Binding Value, Source={x:Reference slider}}" />
@@ -33,6 +52,23 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
 3. ### Binding context inherictance
 The BindingContext property value is inherited through the visual tree.
+```XAML
+ <StackLayout VerticalOptions="Fill"
+                     BindingContext="{x:Reference slider}">
 
-For more details, see [Binding context inhenrictnace](../Code/DataBinding/DataBinding/Pages/BindingContextInherictance.xaml)
+            <Label Text="TEXT"
+                   FontSize="80"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"
+                   Rotation="{Binding Value}" />
+
+            <BoxView Color="#800000FF"
+                     WidthRequest="180"
+                     HeightRequest="40"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Start"
+                     Rotation="{Binding Value}" />
+        </StackLayout>
+```
+For example code, see [Binding context inhenrictnace](../Code/DataBinding/DataBinding/Pages/BindingContextInherictance.xaml)
 
