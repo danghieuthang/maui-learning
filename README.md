@@ -1,7 +1,8 @@
 # Tutorial
 Name | URL | Note
 --- | --- | --- |
-| App lifecyle | [App Lifecyle](./Tutorials/app_lifecycle.md.md) |  |
+| Understanding XAML | [XAML](./Tutorials/XAML.md) |  |
+| App lifecyle | [App Lifecyle](./Tutorials/app_lifecycle.md) |  |
 | Data Binding | [Data Binding](./Tutorials/data_binding.md) |  |
 | MVVM | [Upgrade your app with MVVM concepts](https://learn.microsoft.com/en-gb/dotnet/maui/tutorials/notes-mvvm/?view=net-maui-8.0) |  |
 # Ebook
