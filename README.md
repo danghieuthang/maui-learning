@@ -11,6 +11,10 @@ Name | URL | Note
 
 # Project Structure
 
+Name | URL | Note
+--- | --- | --- |
+| Model-View-ViewModel (MVVM) | https://learn.microsoft.com/en-us/dotnet/architecture/maui/mvvm | Structural basis for creating our applications |
+
 # Source Example
 
 # Application Practice Project
