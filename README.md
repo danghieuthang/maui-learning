@@ -20,3 +20,8 @@ Name | URL | Note
 # Source Example
 
 # Application Practice Project
+
+
+Name | URL | Note
+--- | --- | --- |
+| Notifying two separate classes of property change using Mvvm Community Toolkit | https://devcodef1.com/news/1042172/notifying-property-change-using-mvvm-community-toolkit | |

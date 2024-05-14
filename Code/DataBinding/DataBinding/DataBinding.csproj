@@ -72,6 +72,9 @@
 	  <MauiXaml Update="Pages\ContextBindingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\ViewModelNofityPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\WithoutBindingContextPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

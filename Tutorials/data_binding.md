@@ -24,7 +24,7 @@ In .NET MAUI, data binding is typically achieved through the MVVM (Model-View-Vi
 - Use code. For example code, see [Binding with Binding Context Details](../Code/DataBinding/DataBinding/Pages/BasicBindingPage.xaml.cs)
 
 - Use XAML markup extensions to define. 
-```XAML
+```xml
  <Label Text="TEXT"
                FontSize="80"
                HorizontalOptions="Center"
@@ -46,13 +46,13 @@ For example code, see [Binding with Binding Context Details](../Code/DataBinding
 2. ### Binding without Binding Context
 - Use code. For more details, see [Binding without a Binding Context Details](../Code/DataBinding/DataBinding/Pages/WithoutBindingContextPage.xaml.cs)
 - Use XAML:
-```XAML
-Scale="{Binding Value, Source={x:Reference slider}}" />
+```xml
+<Scale="{Binding Value, Source={x:Reference slider}}" />
 ```
 
 3. ### Binding context inherictance
 The BindingContext property value is inherited through the visual tree.
-```XAML
+```xml
  <StackLayout VerticalOptions="Fill"
                      BindingContext="{x:Reference slider}">
 
@@ -72,3 +72,39 @@ The BindingContext property value is inherited through the visual tree.
 ```
 For example code, see [Binding context inhenrictnace](../Code/DataBinding/DataBinding/Pages/BindingContextInherictance.xaml)
 
+## Binding Mode
+1. Default Binding Modes: Each .NET MAUI bindable property has a default binding mode, accessible via `DefaultBindingMode`.
+
+### Common Modes:
+1. **OneWay**: Used by properties like `Rotation`, `Scale`, and `Opacity`. The target property is set from the source.
+2. **TwoWay**: Allowing bidirectional updates between source and target.
+Some properties: 
+- `Date` property of `DatePicker`
+- `Text` property of `Editor`, `Entry`, `SearchBar`, and `EntryCell`
+- `IsRefreshing` property of `ListView`
+- `SelectedItem` property of `MultiPage`
+- `SelectedIndex` and SelectedItem properties of `Picker`
+- `Value` property of `Slider` and `Stepper`
+- `IsToggled` property of `Switch`
+- `On` property of `SwitchCell`
+- `Time` property of `TimePicker`
+3. **OneWayToSource**: Read-only properties like `SelectedItem` of `ListView` use this to update the source from the target.
+4. **OneTime**: Updates the target only when the binding context changes, without monitoring source property changes.
+
+[See more](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/data-binding/binding-mode?view=net-maui-8.0)
+
+### Implementing INotifyPropertyChanged
+
+In the MVVM (Model-View-ViewModel) pattern, the ViewModel acts as the intermediary between the Model and the View. When a property in the ViewModel changes, it needs to notify the View so that the corresponding UI can be updated.
+
+
+1. **ViewModels**: They don’t define bindable properties but use `INotifyPropertyChanged` for notifying binding infrastructure about property changes.
+
+[View example](../Code/DataBinding/DataBinding/Pages/ViewModelNofityPage.xaml)
+
+### XAML Data Binding Mode
+- Binding Overrides: It’s possible to override the default binding mode by setting the Mode property in the binding definition.
+
+```xml
+<Slider Value="{Binding Source={x:Reference label}, Path=Opacity, Mode=TwoWay}" />
+```

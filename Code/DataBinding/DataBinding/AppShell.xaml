@@ -27,6 +27,11 @@
             Title="Binding Context Inhenritance"
             ContentTemplate="{DataTemplate pages:BindingContextInherictance}"
             Route="Binding Context Inhenritance" />
+
+        <ShellContent
+            Title="ViewModels Property-Change Notification"
+            ContentTemplate="{DataTemplate pages:ViewModelNofityPage}"
+            Route="ViewModels Property-Change Notification" />
     </TabBar>
     
 </Shell>
