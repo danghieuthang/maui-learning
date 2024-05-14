@@ -93,9 +93,7 @@ A common example of an attached property is the `Grid.Row` and `Grid.Column` pro
 </Grid>
 ```
 
-## Platform differences
-
-.NET MAUI apps can customize UI appearance on a per-platform basis. This can be achieved in XAML using the OnPlatform and On classes:
+- **Platform differences**: .NET MAUI apps can customize UI appearance on a per-platform basis. This can be achieved in XAML using the OnPlatform and On classes:
 
 ```xml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -110,3 +108,31 @@ A common example of an attached property is the `Grid.Row` and `Grid.Column` pro
     ...
 </ContentPage>
 ```
+
+## Markup Extensions
+
+Markup extensions are dynamic placeholders for attribute values in XAML. They resolve the value of a property at runtime. Markup extensions are surrounded by curly braces `{}`.
+
+Here are some commonly used markup extensions in .NET MAUI:
+
+- **Binding**: Creates a data binding. For example, `{Binding Path}` creates a binding to the `Path` property of the current binding context.
+
+- **StaticResource**: References a resource defined elsewhere in XAML. For example, `{StaticResource key}` references a resource with the specified key.
+
+- **x:Type**: Specifies a type in XAML. For example, `{x:Type TypeName}` specifies the type `TypeName`.
+
+- **x:Static**: References a static field or property. For example, `{x:Static local:MyClass.MyProperty}` references the static property `MyProperty` of the class `MyClass`.
+
+Here's an example of using markup extensions in XAML:
+
+```xml
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="...">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#2196F3</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Label Text="Hello, .NET MAUI!" TextColor="{StaticResource PrimaryColor}" />
+</ContentPage>
